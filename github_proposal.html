@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiveCampaign Proposal for PocketHealth</title>
+    <!-- GitHub Pages Analytics Ready -->
+    <meta name="description" content="ActiveCampaign proposal for PocketHealth - AI-powered marketing automation for healthcare">
+    <meta name="author" content="ActiveCampaign Sales Team">
+    
+    <!-- Add Google Analytics if you have it -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide:nth-child(odd) {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '▶';
+            color: #26d0ce;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-white {
+            background: white;
+            color: #333;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #26d0ce;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #26d0ce;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #26d0ce;
+        }
+
+        .challenge-item {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-item::before {
+            content: '⚡';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .solution-item {
+            background: linear-gradient(135deg, #26d0ce, #1a2980);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-item::before {
+            content: '✓';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.recommended {
+            border: 3px solid #26d0ce;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.recommended::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #26d0ce;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1a2980;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #26d0ce;
+            color: white;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            border-top: 3px solid #26d0ce;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .content-white h2 {
+            color: #1a2980;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #26d0ce;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #26d0ce;
+            transform: scale(1.3);
+        }
+
+        /* Admin Panel for Tracking */
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            max-width: 300px;
+            display: none;
+            z-index: 2000;
+        }
+
+        .admin-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #26d0ce;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2001;
+            font-size: 16px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .two-column,
+            .three-column {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .navigation {
+                display: none;
+            }
+
+            .admin-panel, .admin-toggle {
+                display: none;
+            }
+        }
+
+        .ai-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Admin Panel for Tracking (Only visible to you) -->
+    <div class="admin-toggle" onclick="toggleAdmin()" title="View Analytics">📊</div>
+    <div class="admin-panel" id="adminPanel">
+        <div><strong>Proposal Analytics</strong></div>
+        <div id="analyticsData">Loading...</div>
+        <button onclick="exportData()" style="margin-top: 10px; padding: 5px 10px; background: #26d0ce; color: white; border: none; border-radius: 5px; cursor: pointer;">Export Data</button>
+    </div>
+
+    <!-- Hero Slide -->
+    <section class="slide hero">
+        <div class="navigation">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
+            <div class="nav-dot" data-slide="4"></div>
+            <div class="nav-dot" data-slide="5"></div>
+            <div class="nav-dot" data-slide="6"></div>
+            <div class="nav-dot" data-slide="7"></div>
+            <div class="nav-dot" data-slide="8"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="logo">ActiveCampaign</div>
+            <h1>Transform Your Healthcare Marketing with <span class="highlight">AI-Powered Automation</span></h1>
+            <div class="subtitle">
+                A comprehensive proposal for PocketHealth to convert more free users to paid subscribers
+            </div>
+            <div class="ai-badge">🤖 Powered by Advanced AI</div>
+            <a href="#challenges" class="cta-button">Discover Your Solution</a>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">180k+</div>
+                    <div>Customers Trust Us</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">#1</div>
+                    <div>Email Deliverability</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2M+</div>
+                    <div>Your Patient Database</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3M</div>
+                    <div>Recommended Contact Limit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Challenges -->
+    <section class="slide" id="challenges">
+        <div class="container">
+            <h2>Your Current Challenges with Customer.io</h2>
+            <div class="two-column">
+                <div>
+                    <div class="challenge-item">
+                        <h3>Limited Data Structure</h3>
+                        <p>Difficult to get the right data associated with contacts, making personalization challenging without compromising patient privacy.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Complex Automation Setup</h3>
+                        <p>Requires engineering team involvement for SMS setup, in-app messaging, and workflow modifications, slowing down campaign deployment.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Limited User Permissions</h3>
+                        <p>Everyone can see everything - no granular access control for your sensitive healthcare data and different team roles.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="challenge-item">
+                        <h3>Lack of Omnichannel</h3>
+                        <p>Unable to create comprehensive journeys connecting email, SMS, and website interactions for optimal conversion rates.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Poor User Experience</h3>
+                        <p>Platform lacks intuitive UX, making it difficult to navigate and manage campaigns efficiently.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Growing Costs</h3>
+                        <p>Experiencing overages with 3M+ contacts, need better pricing structure as you continue rapid growth in the healthcare market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PocketHealth-Specific Solutions -->
+    <section class="slide">
+        <div class="content-white">
+            <h2>ActiveCampaign Solutions for PocketHealth</h2>
+            <div class="three-column">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Patient Segmentation</h3>
+                    <p>Segment by subscription type (Basic, Core, Unlimited), imaging activity, and engagement without exposing PII - perfect for healthcare compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Conversion Automations</h3>
+                    <p>Automated workflows to convert free users when they have new imaging available, preview premium features, or show high engagement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>SMS + Email Journeys</h3>
+                    <p>Seamlessly combine appointment reminders via SMS with upgrade campaigns via email - all in one platform.</p>
+                </div>
+            </div>
+
+            <div class="two-column" style="margin-top: 60px;">
+                <div>
+                    <div class="solution-item">
+                        <h3>HIPAA Compliant & Secure</h3>
+                        <p>✓ Business Associate Agreement (BAA) included<br>
+                        ✓ Granular user permissions by role and data access<br>
+                        ✓ Secure API connections for patient data</p>
+                    </div>
+                    <div class="solution-item">
+                        <h3>AI-Powered Campaign Creation</h3>
+                        <p>✓ Build complex automations with simple prompts<br>
+                        ✓ Automatic translation for French Canadian patients<br>
+                        ✓ Predictive sending for optimal open rates</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="solution-item">
+                        <h3>Revenue-Focused Features</h3>
+                        <p>✓ Site messaging for free users visiting upgrade pages<br>
+                        ✓ Parent/child campaign structures for complex workflows<br>
+                        ✓ A/B/C/D/E testing up to 10 variations</p>
+                    </div>
+                    <div class="solution-item">
+                        <h3>Seamless Migration Support</h3>
+                        <p>✓ Dedicated migration team for 2M+ contacts<br>
+                        ✓ IP warming for optimal deliverability<br>
+                        ✓ Parallel platform operation during transition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features for Healthcare -->
+    <section class="slide">
+        <div class="container">
+            <h2>Healthcare-Specific Capabilities</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <h3>🏥 Patient Journey Automation</h3>
+                    <p>Trigger campaigns when new imaging is available → Guide through preview features → Convert to paid subscription based on engagement patterns.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>📊 Privacy-First Personalization</h3>
+                    <p>Use contact IDs and custom fields instead of PII. Personalize by exam type, provider location, and subscription status without compromising privacy.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🔒 Advanced Security Controls</h3>
+                    <p>Role-based permissions ensure compliance team, marketing team, and QA environments have appropriate access levels to sensitive data.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🎯 Smart Conversion Targeting</h3>
+                    <p>Identify high-usage free users automatically and trigger upgrade campaigns. Track who previews paid features and follow up strategically.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>📈 Multi-Language Support</h3>
+                    <p>Automatic translation for French Canadian patients (1% of your base) with AI-powered content generation in multiple languages.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>⚡ Real-Time Event Tracking</h3>
+                    <p>Connect with Amplitude data, track in-app behaviors, and trigger campaigns based on patient actions within your platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Advantages -->
+    <section class="slide">
+        <div class="content-white">
+            <h2>AI Features That Set Us Apart</h2>
+            <div class="two-column">
+                <div>
+                    <h3>🤖 AI Automation Builder</h3>
+                    <p>Simply describe what you want: "Build me 4 emails over 2 weeks to convert free users to paid subscribers" - and watch AI create the entire workflow.</p>
+                    
+                    <h3>🎨 AI Brand Kit & Content</h3>
+                    <p>Automatically analyze pockethealth.com to create branded email templates. Generate content that simplifies medical language for patients.</p>
+                    
+                    <h3>📅 Predictive Sending</h3>
+                    <p>AI learns when each individual patient is most likely to open emails, increasing open rates by 15-20%.</p>
+                </div>
+                <div>
+                    <h3>📊 Campaign Reporting Co-pilot</h3>
+                    <p>Ask AI questions like "Why did this email perform better?" or "How can I improve conversion rates?" and get actionable insights.</p>
+                    
+                    <h3>🔍 Smart Segmentation</h3>
+                    <p>AI suggests high-value segments based on patient behavior patterns, helping you identify the best upgrade candidates.</p>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); padding: 30px; border-radius: 15px; color: white; margin-top: 20px;">
+                        <h3 style="color: white; margin-bottom: 15px;">💡 Healthcare AI Use Case</h3>
+                        <p>"Create an automation that identifies free users who have viewed 3+ imaging studies but haven't upgraded, then send them a personalized explanation of premium features with a 15% discount."</p>
+                        <strong>AI builds this entire workflow in under 60 seconds.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="slide">
+        <div class="container">
+            <h2>Investment & Pricing</h2>
+            <div class="two-column">
+                <div class="pricing-card">
+                    <h3>1 Million Contacts</h3>
+                    <div class="price">$96,800</div>
+                    <p><strong>Annual (2-year agreement)</strong></p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>20M monthly emails included</li>
+                        <li>All automation features</li>
+                        <li>HIPAA compliance & BAA</li>
+                        <li>User permissions & security</li>
+                        <li>SMS add-on available</li>
+                        <li>Migration support included</li>
+                        <li>Onboarding fee waived</li>
+                    </ul>
+                </div>
+                <div class="pricing-card recommended">
+                    <h3>3 Million Contacts</h3>
+                    <div class="price">$84,800</div>
+                    <p><strong>Annual (2-year agreement)</strong></p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>15M monthly emails included</li>
+                        <li>All AI features included</li>
+                        <li>Advanced automation builder</li>
+                        <li>Dedicated customer success manager</li>
+                        <li>Priority deliverability support</li>
+                        <li>Multiple workspace support</li>
+                        <li>Custom integrations available</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <strong>Recommended for PocketHealth's growth trajectory and current 2M+ active contacts</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: white;">
+                <p><strong>Additional Options:</strong></p>
+                <p>SMS Marketing: Starting at $21/month • Transactional Email: Starting at $15/month</p>
+                <p>Proposal valid through August 29, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline -->
+    <section class="slide">
+        <div class="container">
+            <h2>Implementation Timeline</h2>
+            <div class="two-column">
+                <div>
+                    <div class="timeline-item">
+                        <h3>Phase 1: Technical Validation (September)</h3>
+                        <p>• API integration testing<br>
+                        • Security review with your team<br>
+                        • Custom field mapping<br>
+                        • HIPAA compliance verification</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Phase 2: Migration Planning (October)</h3>
+                        <p>• Contact migration strategy<br>
+                        • Workspace setup (QA, Production)<br>
+                        • User permission configuration<br>
+                        • Email template creation</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Phase 3: Parallel Operation (Nov-Apr 2026)</h3>
+                        <p>• Run both platforms simultaneously<br>
+                        • Gradual campaign migration<br>
+                        • A/B testing between platforms<br>
+                        • Team training and optimization</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="timeline-item">
+                        <h3>Phase 4: IP Warming & Deliverability</h3>
+                        <p>• Dedicated IP setup<br>
+                        • 4-6 month warming process<br>
+                        • Gradual volume increase<br>
+                        • Deliverability monitoring</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Phase 5: Full Migration (By April 2027)</h3>
+                        <p>• Complete transition to ActiveCampaign<br>
+                        • Customer.io contract termination<br>
+                        • Final automation testing<br>
+                        • Go-live celebration 🎉</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #26d0ce, #1a2980); padding: 30px; border-radius: 15px; color: white; margin-top: 20px;">
+                        <h3 style="color: white;">✅ Success Metrics</h3>
+                        <p>• 15-20% improvement in email open rates<br>
+                        • 25%+ increase in free-to-paid conversions<br>
+                        • 50% reduction in campaign setup time<br>
+                        • 100% HIPAA compliance maintained</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="slide">
+        <div class="content-white">
+            <h2>Ready to Transform Your Patient Marketing?</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h3>What Danielle Said:</h3>
+                    <blockquote style="font-style: italic; padding: 20px; background: #f8f9fa; border-left: 4px solid #26d0ce; margin: 20px 0;">
+                        "I'm very happy to see this. The AI piece is great... I think that's going to be very important to others in the organization, and could really leverage our efforts here."
+                    </blockquote>
+                    
+                    <h3>Immediate Next Steps:</h3>
+                    <div style="background: linear-gradient(135deg, #1a2980, #26d0ce); color: white; padding: 30px; border-radius: 15px; margin: 20px 0;">
+                        <p><strong>1. Integration Solutions Call</strong><br>
+                        Schedule with your engineering team to validate API requirements</p>
+                        
+                        <p><strong>2. Security Review</strong><br>
+                        HIPAA compliance discussion with your IT team</p>
+                        
+                        <p><strong>3. Executive Presentation</strong><br>
+                        Present to Adam and leadership team with ROI projections</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; padding: 40px; border-radius: 20px; margin: 20px 0;">
+                        <h3 style="color: white; margin-bottom: 20px;">🚀 Start Your Free Trial</h3>
+                        <p>Test ActiveCampaign with your actual PocketHealth data in a sandbox environment.</p>
+                        <a href="#" class="cta-button" style="background: white; color: #ff6b6b; margin-top: 20px;">Get Started Today</a>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <h3>Your ActiveCampaign Team</h3>
+                        <p><strong>Griff Barth</strong> - Account Executive<br>
+                        <strong>Alex Swan</strong> - Senior Sales Manager<br>
+                        <strong>Molly Skokna</strong> - Solutions Consultant</p>
+                        
+                        <p style="margin-top: 20px;">
+                            <strong>Let's connect on Slack for faster communication!</strong>
+                        </p>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <p><small>This proposal is valid through August 29, 2025. Pricing includes 2-year agreement benefits and waived onboarding fees.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Enhanced Analytics and Tracking for GitHub Pages
+        class GitHubProposalTracker {
+            constructor() {
+                this.sessionId = this.generateSessionId();
+                this.startTime = new Date();
+                this.interactions = [];
+                this.slides = document.querySelectorAll('.slide');
+                this.slideViews = new Map();
+                this.isTracking = true;
+                this.viewerInfo = this.gatherViewerInfo();
+                
+                this.initTracking();
+                this.updateAdminPanel();
+            }
+            
+            generateSessionId() {
+                return 'gh_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+            }
+            
+            gatherViewerInfo() {
+                return {
+                    userAgent: navigator.userAgent,
+                    viewport: `${window.innerWidth}x${window.innerHeight}`,
+                    referrer: document.referrer,
+                    url: window.location.href,
+                    timestamp: new Date().toISOString()
+                };
+            }
+            
+            initTracking() {
+                // Track page load
+                this.trackEvent('proposal_opened', this.viewerInfo);
+                
+                // Track slide views
+                this.setupSlideTracking();
+                
+                // Track interactions
+                this.setupInteractionTracking();
+                
+                // Track time spent
+                this.setupTimeTracking();
+                
+                // Send data periodically and on exit
+                this.setupDataSending();
+                
+                // Update admin panel periodically
+                setInterval(() => this.updateAdminPanel(), 5000);
+            }
+            
+            trackEvent(eventType, data = {}) {
+                const event = {
+                    sessionId: this.sessionId,
+                    eventType,
+                    timestamp: new Date().toISOString(),
+                    timeFromStart: new Date() - this.startTime,
+                    ...data
+                };
+                
+                this.interactions.push(event);
+                
+                // Store in localStorage for persistence
+                this.saveToLocalStorage();
+                
+                // Optional: Send to external service (uncomment to use)
+                // this.sendToWebhook(event);
+            }
+            
+            setupSlideTracking() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const slideIndex = Array.from(this.slides).indexOf(entry.target);
+                            const slideTitle = entry.target.querySelector('h1, h2')?.textContent || `Slide ${slideIndex + 1}`;
+                            
+                            if (!this.slideViews.has(slideIndex)) {
+                                this.slideViews.set(slideIndex, new Date());
+                                this.trackEvent('slide_viewed', {
+                                    slideIndex,
+                                    slideTitle: slideTitle.substring(0, 50)
+                                });
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+            
+            setupInteractionTracking() {
+                // Track CTA button clicks
+                document.querySelectorAll('.cta-button').forEach((button, index) => {
+                    button.addEventListener('click', (e) => {
+                        this.trackEvent('cta_clicked', {
+                            buttonText: button.textContent.trim(),
+                            buttonIndex: index
+                        });
+                    });
+                });
+                
+                // Track navigation dot clicks
+                document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.trackEvent('navigation_used', {
+                            targetSlide: index
+                        });
+                    });
+                });
+                
+                // Track pricing card interactions
+                document.querySelectorAll('.pricing-card').forEach((card, index) => {
+                    card.addEventListener('click', () => {
+                        const title = card.querySelector('h3')?.textContent;
+                        this.trackEvent('pricing_card_clicked', {
+                            cardIndex: index,
+                            cardTitle: title
+                        });
+                    });
+                });
+            }
+            
+            setupTimeTracking() {
+                // Track engagement milestones
+                const milestones = [30, 60, 120, 300]; // seconds
+                milestones.forEach(seconds => {
+                    setTimeout(() => {
+                        this.trackEvent('time_milestone', {
+                            seconds: seconds,
+                            slidesViewed: this.slideViews.size
+                        });
+                    }, seconds * 1000);
+                });
+            }
+            
+            setupDataSending() {
+                // Send data when user is about to leave
+                window.addEventListener('beforeunload', () => {
+                    this.trackEvent('proposal_closed', this.generateSummary());
+                });
+                
+                // Send data when tab becomes hidden
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        this.trackEvent('tab_hidden', {
+                            slidesViewed: this.slideViews.size
+                        });
+                    } else {
+                        this.trackEvent('tab_visible', {
+                            slidesViewed: this.slideViews.size
+                        });
+                    }
+                });
+            }
+            
+            saveToLocalStorage() {
+                const data = this.generateSummary();
+                localStorage.setItem('proposalAnalytics_' + this.sessionId, JSON.stringify(data));
+                localStorage.setItem('proposalAnalytics_latest', JSON.stringify(data));
+            }
+            
+            generateSummary() {
+                const now = new Date();
+                return {
+                    sessionId: this.sessionId,
+                    totalTimeSpent: now - this.startTime,
+                    formattedTime: this.formatTime(now - this.startTime),
+                    slidesViewed: Array.from(this.slideViews.keys()).sort(),
+                    totalSlides: this.slides.length,
+                    completionRate: (this.slideViews.size / this.slides.length * 100).toFixed(1) + '%',
+                    interactions: this.interactions.length,
+                    ctaClicks: this.interactions.filter(i => i.eventType === 'cta_clicked').length,
+                    navigationClicks: this.interactions.filter(i => i.eventType === 'navigation_used').length,
+                    pricingInteractions: this.interactions.filter(i => i.eventType === 'pricing_card_clicked').length,
+                    viewerInfo: this.viewerInfo,
+                    timestamp: now.toISOString(),
+                    allEvents: this.interactions
+                };
+            }
+            
+            formatTime(ms) {
+                const minutes = Math.floor(ms / 60000);
+                const seconds = Math.floor((ms % 60000) / 1000);
+                return `${minutes}m ${seconds}s`;
+            }
+            
+            updateAdminPanel() {
+                const data = this.generateSummary();
+                const panel = document.getElementById('analyticsData');
+                if (panel) {
+                    panel.innerHTML = `
+                        <div>Session: ${data.sessionId.substring(0, 12)}...</div>
+                        <div>Time: ${data.formattedTime}</div>
+                        <div>Completion: ${data.completionRate}</div>
+                        <div>Slides: ${data.slidesViewed.length}/${data.totalSlides}</div>
+                        <div>CTA Clicks: ${data.ctaClicks}</div>
+                        <div>Interactions: ${data.interactions}</div>
+                        <div>Last Update: ${new Date().toLocaleTimeString()}</div>
+                    `;
+                }
+            }
+            
+            // Optional: Send to webhook (Zapier, Make.com, etc.)
+            sendToWebhook(event) {
+                // Uncomment and configure your webhook URL
+                /*
+                fetch('YOUR_WEBHOOK_URL', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(event)
+                }).catch(err => console.log('Webhook failed:', err));
+                */
+            }
+            
+            getAnalytics() {
+                return this.generateSummary();
+            }
+        }
+        
+        // Admin Panel Functions
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            panel.style.display = panel.style.display === 'none' || !panel.style.display ? 'block' : 'none';
+        }
+        
+        function exportData() {
+            const data = window.proposalTracker.getAnalytics();
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `pockethealth-proposal-analytics-${data.sessionId}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // Initialize tracking
+        const tracker = new GitHubProposalTracker();
+        window.proposalTracker = tracker;
+        
+        // Navigation and interaction code
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            // Add click handlers to navigation dots
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    slides[index].scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    updateActiveNav(index);
+                });
+            });
+            
+            // Update active navigation on scroll
+            function updateActiveNav(activeIndex) {
+                navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            }
+            
+            // Scroll spy functionality
+            let currentSlide = 0;
+            
+            function handleScroll() {
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
+                
+                slides.forEach((slide, index) => {
+                    const slideTop = slide.offsetTop;
+                    const slideBottom = slideTop + slide.offsetHeight;
+                    
+                    if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                        if (currentSlide !== index) {
+                            currentSlide = index;
+                            updateActiveNav(index);
+                        }
+                    }
+                });
+            }
+            
+            // Add scroll listener with throttling
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        handleScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            
+            // Add hover effects to feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Add click animations to CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    button.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                        alert('Thank you for your interest! Griff will be in touch soon.');
+                    }, 150);
+                });
+            });
+        });
+        
+        // Hide admin panel on mobile
+        if (window.innerWidth <= 768) {
+            document.querySelector('.admin-toggle').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
